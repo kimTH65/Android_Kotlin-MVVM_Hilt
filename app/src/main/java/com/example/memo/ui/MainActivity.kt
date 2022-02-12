@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
             R.layout.activity_main
         )
-
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.framelayout, Fragment_Main())
         transaction.commit()
