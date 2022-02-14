@@ -28,6 +28,7 @@ class Fragment_Main : Fragment() {
         mBinding = FragmentMainBinding.inflate(inflater, container, false)
         home_activity = context as MainActivity
 
+        U
         var mAdapter : RecyclerViewAdapter
         RtrofitApi.api
             .getBoxOffice("0a248ab8367333fba08f7bfade19fce4","targetDt" )

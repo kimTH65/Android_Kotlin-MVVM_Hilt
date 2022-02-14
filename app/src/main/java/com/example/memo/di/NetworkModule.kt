@@ -1,5 +1,6 @@
-package com.example.memo.model
+package com.example.memo.di
 
+import com.example.memo.model.dto.request.RetrofitInterface
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,13 +38,12 @@ object NetworkModule {
         BASE_URL:String,
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory)
-    : RetrofitInterface {
+    : Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()
-            .create(RetrofitInterface::class.java)
     }
 
     @Provides
@@ -52,6 +52,11 @@ object NetworkModule {
         return GsonConverterFactory.create()
     }
 
+    @Provides
+    @Singleton
+    fun provideRetrofitService(retrofit: Retrofit): RetrofitInterface {
+        return retrofit.create(RetrofitInterface::class.java)
+    }
 
 
 }
