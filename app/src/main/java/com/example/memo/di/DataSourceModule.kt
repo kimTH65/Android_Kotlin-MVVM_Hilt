@@ -1,5 +1,6 @@
 package com.example.memo.di
 
+import com.example.memo.model.dto.DataSource
 import com.example.memo.model.dto.DataSourceImpl
 import com.example.memo.model.dto.request.RetrofitInterface
 import com.example.memo.repository.Repository
@@ -12,9 +13,9 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RepositoryModule {
+class DataSourceModule {
 
     @Provides
     @Singleton
-    fun provideRepository(dataSourceImpl: DataSourceImpl): Repository = RepositoryImpl(dataSourceImpl)
+    fun provideDataSource(retrofitInterface: RetrofitInterface): DataSource = DataSourceImpl(retrofitInterface)
 }

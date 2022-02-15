@@ -13,5 +13,5 @@ interface RetrofitInterface {
     suspend fun getBoxOffice( // suspend = Coroutine사용
         @Query("key") key: String?,
         @Query("targetDt") targetDt: String?
-    ): Response<List<MovieResponse>>
+    ): Response<MovieResponse>
 }

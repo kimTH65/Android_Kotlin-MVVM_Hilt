@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -17,36 +18,44 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class Fragment_Main : Fragment() {
-    lateinit var home_activity: MainActivity
     private var mBinding: FragmentMainBinding? = null
     private val binding get() = mBinding!!
+
     private val mainViewModel by viewModels<MainViewModel>()
 
-    @SuppressLint("FragmentLiveDataObserve")
+    private fun init(){
+        observeViewModel()
+    }
+    private fun observeViewModel(){
+        val result = mainViewModel.getMovie("0a248ab8367333fba08f7bfade19fce4","20220215")
+
+        val mAdapter = RecyclerViewAdapter(requireContext() , mainViewModel)
+        val LinearManager = LinearLayoutManager(requireContext())
+        LinearManager.reverseLayout = true
+        LinearManager.stackFromEnd = true
+
+
+        mainViewModel.movieRepository.observe(requireActivity(), Observer { movies ->
+            // Update the cached copy of the users in the adapter.
+            movies?.let { mAdapter.setMovies(it) }
+        })
+
+        binding.recyclerview.apply {
+            adapter = mAdapter
+            layoutManager = LinearManager
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         mBinding = FragmentMainBinding.inflate(inflater, container, false)
-        home_activity = context as MainActivity
 
-        val mAdapter = RecyclerViewAdapter(home_activity , mainViewModel)
+        init()
 
 
-        val LinearManager = LinearLayoutManager(home_activity)
-        LinearManager.reverseLayout = true
-        LinearManager.stackFromEnd = true
-
-        binding.recyclerview.apply {
-            adapter = mAdapter
-            layoutManager = LinearManager
-
-        }
-        mainViewModel.movieRepository.observe(this, Observer { users ->
-            // Update the cached copy of the users in the adapter.
-            users?.let { mAdapter.setMovies(it) }
-        })
 
         return binding.root
     }

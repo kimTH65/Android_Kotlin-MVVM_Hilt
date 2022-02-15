@@ -1,6 +1,7 @@
 package com.example.memo.model.dto
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 data class MovieResponse(
@@ -20,4 +21,4 @@ data class Dto(
     var openDt : String?,
     @SerializedName("movieNm")
     var movieNm : String?,
-)
+) : Serializable

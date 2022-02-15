@@ -1,6 +1,7 @@
 package com.example.memo.di
 
 import com.example.memo.repository.Repository
+import com.example.memo.repository.RepositoryImpl
 import com.example.memo.usecase.UseCase
 import dagger.Module
 import dagger.Provides
@@ -13,5 +14,5 @@ import javax.inject.Singleton
 class UseCaseModule {
     @Provides
     @Singleton
-    fun provideUseCase(repository: Repository) : UseCase = UseCase(repository)
+    fun provideUseCase(repositoryImpl: RepositoryImpl) : UseCase = UseCase(repositoryImpl)
 }

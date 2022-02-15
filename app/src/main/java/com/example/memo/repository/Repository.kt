@@ -8,6 +8,6 @@ import retrofit2.Response
 
 interface Repository {
 
-    suspend fun provideRepository(key: String,targetDt: String) : Response<List<MovieResponse>>
+    suspend fun provideRepository(key: String,targetDt: String) : List<Dto>
 
 }

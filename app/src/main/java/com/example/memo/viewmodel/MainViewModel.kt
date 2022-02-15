@@ -23,13 +23,15 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
         private val useCase: UseCase
     ) : ViewModel() {
-    val movieRepository: LiveData<ApiResult<List<Dto>>> get()= _movieRepository
-    private val _movieRepository = MutableLiveData<ApiResult<List<Dto>>>()
-    fun getMovie() {
+    val movieRepository: LiveData<List<Dto>> get()= _movieRepository
+    private val _movieRepository = MutableLiveData<List<Dto>>()
+    //("0a248ab8367333fba08f7bfade19fce4","targetDt")
+
+    fun getMovie(key: String,targetDt: String)=
         viewModelScope.launch{
-            _movieRepository.postValue(ApiResult.loading())
-            val result = useCase.getMovie("0a248ab8367333fba08f7bfade19fce4","targetDt")
-            _movieRepository.postValue(ApiResult<result>)
+            val result = useCase.getMovie(key,targetDt)
+
+            _movieRepository.postValue(result!!)
         }
-    }
+
 }

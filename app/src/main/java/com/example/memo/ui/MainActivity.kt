@@ -17,15 +17,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
-            R.layout.activity_main
-        )
-        /*val transaction = supportFragmentManager.beginTransaction()
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+
+        val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.framelayout, Fragment_Main())
-        transaction.commit()*/
+        transaction.commit()
 
     }
-
-
 
 }
