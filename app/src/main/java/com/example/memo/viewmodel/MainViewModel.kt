@@ -1,29 +1,35 @@
 package com.example.memo.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
+import android.util.Log
+import android.widget.Toast
+import androidx.lifecycle.*
+import com.example.memo.ApiResult
 import com.example.memo.model.dto.Dto
+import com.example.memo.model.dto.MovieResponse
 import com.example.memo.repository.Repository
 import com.example.memo.repository.RepositoryImpl
+import com.example.memo.ui.MainActivity
 import com.example.memo.usecase.UseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-        private val repositoryModule: RepositoryImpl
+        private val useCase: UseCase
     ) : ViewModel() {
-        private val _movieRepository = MutableLiveData<List<Dto>>()
-        val movieRepository = _movieRepository
-
-        fun requestRepositories(UseCase: UseCase) : LiveData{
-            CoroutineScope(Dispatchers.IO).launch {
-                val response = UseCase.getMovie("0a248ab8367333fba08f7bfade19fce4","targetDt")
-            }
+    val movieRepository: LiveData<ApiResult<List<Dto>>> get()= _movieRepository
+    private val _movieRepository = MutableLiveData<ApiResult<List<Dto>>>()
+    fun getMovie() {
+        viewModelScope.launch{
+            _movieRepository.postValue(ApiResult.loading())
+            val result = useCase.getMovie("0a248ab8367333fba08f7bfade19fce4","targetDt")
+            _movieRepository.postValue(ApiResult<result>)
         }
     }
+}

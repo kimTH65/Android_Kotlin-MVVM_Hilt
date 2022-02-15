@@ -35,7 +35,6 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideInstance(
-        BASE_URL:String,
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory)
     : Retrofit {
