@@ -5,7 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+<<<<<<< HEAD:presentation/src/main/java/com/example/memo/ui/RecylerViewAdapter.kt
 import com.example.domain.model.Dto
+=======
+import com.example.memo.model.dto.Dto
+import com.example.memo.model.dto.MovieResponse
+>>>>>>> 38e9c44b313752fe15efe8e74e7f51ce98e2beb0:app/src/main/java/com/example/memo/ui/RecylerViewAdapter.kt
 import com.example.memo.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.recycler_item.view.*
 
