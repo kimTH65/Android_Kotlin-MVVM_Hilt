@@ -1,4 +1,4 @@
-# Android-MVVM-Hilt
+# Android-MVVM_Hilt
 
 <h3>Hilt를 사용한 기초 MVVM 구조</h3>
 
