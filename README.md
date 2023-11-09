@@ -255,3 +255,48 @@ class MainViewModel @Inject constructor(
         }
 }
 ```
+
+#
+
+<h3>5. View</h3>
+
+<div align="center">
+ <h6>
+  <a href="app/src/main/java/com/example/memo/ui">
+   app/src/main/java/com/example/memo/ui
+  </a>
+ </div>
+
+```
+...
+@AndroidEntryPoint
+class Fragment_Main : Fragment() {
+    private var mBinding: FragmentMainBinding? = null
+    private val binding get() = mBinding!!
+
+    private val mainViewModel by viewModels<MainViewModel>()
+
+    private fun init(){
+        observeViewModel()
+    }
+    private fun observeViewModel(){
+        val result = mainViewModel.getMovie("0a248ab8367333fba08f7bfade19fce4","20220215")
+
+        val mAdapter = RecyclerViewAdapter(requireContext() , mainViewModel)
+        val LinearManager = LinearLayoutManager(requireContext())
+        LinearManager.reverseLayout = true
+        LinearManager.stackFromEnd = true
+
+
+        mainViewModel.movieRepository.observe(requireActivity(), Observer { movies ->
+            // Update the cached copy of the users in the adapter.
+            movies?.let { mAdapter.setMovies(it) }
+        })
+
+        binding.recyclerview.apply {
+            adapter = mAdapter
+            layoutManager = LinearManager
+        }
+    }
+...
+```
