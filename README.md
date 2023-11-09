@@ -219,22 +219,40 @@ class RepositoryModule {
 ...
 @Module
 @InstallIn(SingletonComponent::class)
-package com.example.memo.di
-
-import com.example.memo.repository.Repository
-import com.example.memo.repository.RepositoryImpl
-import com.example.memo.usecase.UseCase
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
-
-@Module
-@InstallIn(SingletonComponent::class)
 class UseCaseModule {
     @Provides
     @Singleton
     fun provideUseCase(repositoryImpl: RepositoryImpl) : UseCase = UseCase(repositoryImpl)
 } // UseCase -> app/src/main/java/com/example/memo/usecase/UseCase.kt
+```
+```
+
+#
+
+<h3>4. ViewModel</h3>
+
+<div align="center">
+ <h6>
+  <a href="app/src/main/java/com/example/memo/viewmodel/MainViewModel.kt">
+   app/src/main/java/com/example/memo/viewmodel/MainViewModel.kt
+  </a>
+ </div>
+
+```
+...
+@HiltViewModel
+class MainViewModel @Inject constructor(
+        private val useCase: UseCase
+    ) : ViewModel() {
+    val movieRepository: LiveData<List<Dto>> get()= _movieRepository
+    private val _movieRepository = MutableLiveData<List<Dto>>()
+    //("0a248ab8367333fba08f7bfade19fce4","targetDt")
+
+    fun getMovie(key: String,targetDt: String)=
+        viewModelScope.launch{
+            val result = useCase.getMovie(key,targetDt)
+
+            _movieRepository.postValue(result!!)
+        }
+}
 ```
