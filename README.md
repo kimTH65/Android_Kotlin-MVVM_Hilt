@@ -315,5 +315,10 @@ class Fragment_Main : Fragment() {
             layoutManager = LinearManager
         }
     }
-...
+
+  .
+  .
+  .
+
+
 ```
