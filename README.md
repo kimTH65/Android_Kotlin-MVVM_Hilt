@@ -87,10 +87,9 @@
  </div>
 
 ```
-package com.example.memo.di
-
-import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+  .
+  .
+  .
 
 @HiltAndroidApp
 open class App : Application()
@@ -113,7 +112,10 @@ open class App : Application()
  </div>
 
 ```
-...
+  .
+  .
+  .
+
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
@@ -171,7 +173,10 @@ object NetworkModule {
  </div>
 
 ```
-...
+  .
+  .
+  .
+
 @Module
 @InstallIn(SingletonComponent::class)
 class DataSourceModule {
@@ -193,7 +198,10 @@ class DataSourceModule {
  </div>
 
 ```
-...
+  .
+  .
+  .
+
 @Module
 @InstallIn(SingletonComponent::class)
 class RepositoryModule {
@@ -216,7 +224,10 @@ class RepositoryModule {
  </div>
 
 ```
-...
+  .
+  .
+  .
+
 @Module
 @InstallIn(SingletonComponent::class)
 class UseCaseModule {
@@ -238,7 +249,10 @@ class UseCaseModule {
  </div>
 
 ```
-...
+  .
+  .
+  .
+
 @HiltViewModel
 class MainViewModel @Inject constructor(
         private val useCase: UseCase
@@ -268,7 +282,10 @@ class MainViewModel @Inject constructor(
  </div>
 
 ```
-...
+  .
+  .
+  .
+
 @AndroidEntryPoint
 class Fragment_Main : Fragment() {
     private var mBinding: FragmentMainBinding? = null
