@@ -204,3 +204,37 @@ class RepositoryModule {
     
 } // Repository, RepositoryImpl -> app/src/main/java/com/example/memo/repository
 ```
+
+<div align="center">
+ <h6>
+  <h5>
+   UseCaseModule
+  </h5>
+  <a href="app/src/main/java/com/example/memo/di/UseCaseModule.kt">
+   app/src/main/java/com/example/memo/di/UseCaseModule.kt
+  </a>
+ </div>
+
+```
+...
+@Module
+@InstallIn(SingletonComponent::class)
+package com.example.memo.di
+
+import com.example.memo.repository.Repository
+import com.example.memo.repository.RepositoryImpl
+import com.example.memo.usecase.UseCase
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+class UseCaseModule {
+    @Provides
+    @Singleton
+    fun provideUseCase(repositoryImpl: RepositoryImpl) : UseCase = UseCase(repositoryImpl)
+} // app/src/main/java/com/example/memo/usecase/UseCase.kt
+```
