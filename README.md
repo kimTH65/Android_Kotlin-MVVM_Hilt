@@ -104,9 +104,55 @@ open class App : Application()
 
 <div align="center">
  <h6>
-  <a href="">
+  <a href="app/src/main/java/com/example/memo/di/NetworkModule.kt">
+   app/src/main/java/com/example/memo/di/NetworkModule.kt
   </a>
  </div>
 
 ```
+...
+@Module
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
+    val BASE_URL: String = "https://www.kobis.or.kr"
+
+    @Provides
+    @Singleton
+    fun provideHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .readTimeout(10, TimeUnit.SECONDS)
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(15, TimeUnit.SECONDS)
+            .addInterceptor(provideLoggingInterceptor())
+            .build()
+    }
+
+    private fun provideLoggingInterceptor(): HttpLoggingInterceptor =
+        HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
+
+    @Provides
+    @Singleton
+    fun provideInstance(
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory)
+    : Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(okHttpClient)
+            .addConverterFactory(gsonConverterFactory)
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideConverterFactory(): GsonConverterFactory {
+        return GsonConverterFactory.create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRetrofitService(retrofit: Retrofit): RetrofitInterface {
+        return retrofit.create(RetrofitInterface::class.java)
+    }
+}
 ```
