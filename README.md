@@ -156,6 +156,6 @@ object NetworkModule {
     @Singleton
     fun provideRetrofitService(retrofit: Retrofit): RetrofitInterface {
         return retrofit.create(RetrofitInterface::class.java)
-    }
+    } // RetrofitInterface -> app/src/main/java/com/example/memo/model/dto/request/RetrofitInterface.kt
 }
 ```
