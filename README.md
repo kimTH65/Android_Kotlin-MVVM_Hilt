@@ -236,5 +236,5 @@ class UseCaseModule {
     @Provides
     @Singleton
     fun provideUseCase(repositoryImpl: RepositoryImpl) : UseCase = UseCase(repositoryImpl)
-} // app/src/main/java/com/example/memo/usecase/UseCase.kt
+} // UseCase -> app/src/main/java/com/example/memo/usecase/UseCase.kt
 ```
