@@ -159,3 +159,48 @@ object NetworkModule {
     } // RetrofitInterface -> app/src/main/java/com/example/memo/model/dto/request/RetrofitInterface.kt
 }
 ```
+
+<div align="center">
+ <h6>
+  <h5>
+   DataSourceModule
+  </h5>
+  <a href="app/src/main/java/com/example/memo/di/DataSourceModule.kt">
+   app/src/main/java/com/example/memo/di/DataSourceModule.kt
+  </a>
+ </div>
+
+```
+...
+@Module
+@InstallIn(SingletonComponent::class)
+class DataSourceModule {
+
+    @Provides
+    @Singleton
+    fun provideDataSource(retrofitInterface: RetrofitInterface): DataSource = DataSourceImpl(retrofitInterface)
+} DataSource, DataSourceImpl -> app/src/main/java/com/example/memo/model/dto
+```
+
+<div align="center">
+ <h6>
+  <h5>
+   RepositoryModule
+  </h5>
+  <a href="app/src/main/java/com/example/memo/di/RepositoryModule.kt">
+   app/src/main/java/com/example/memo/di/RepositoryModule.kt
+  </a>
+ </div>
+
+```
+...
+@Module
+@InstallIn(SingletonComponent::class)
+class RepositoryModule {
+
+    @Provides
+    @Singleton
+    fun provideRepository(dataSourceImpl: DataSourceImpl): Repository = RepositoryImpl(dataSourceImpl)
+    
+} // Repository, RepositoryImpl -> app/src/main/java/com/example/memo/repository
+```
