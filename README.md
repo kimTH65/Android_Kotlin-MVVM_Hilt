@@ -104,6 +104,9 @@ open class App : Application()
 
 <div align="center">
  <h6>
+  <h5>
+   NetworkModule
+  </h5>
   <a href="app/src/main/java/com/example/memo/di/NetworkModule.kt">
    app/src/main/java/com/example/memo/di/NetworkModule.kt
   </a>
