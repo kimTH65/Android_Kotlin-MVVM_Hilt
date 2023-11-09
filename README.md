@@ -95,3 +95,18 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 open class App : Application()
 ```
+
+#
+
+<h3>3. DI Module</h3>
+
+<h5>NetworkModule → DataSourceModule → RepositoryModule → UseCaseMoudle </h5>
+
+<div align="center">
+ <h6>
+  <a href="">
+  </a>
+ </div>
+
+```
+```
