@@ -225,7 +225,6 @@ class UseCaseModule {
     fun provideUseCase(repositoryImpl: RepositoryImpl) : UseCase = UseCase(repositoryImpl)
 } // UseCase -> app/src/main/java/com/example/memo/usecase/UseCase.kt
 ```
-```
 
 #
 
