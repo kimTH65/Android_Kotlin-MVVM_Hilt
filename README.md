@@ -179,7 +179,7 @@ class DataSourceModule {
     @Provides
     @Singleton
     fun provideDataSource(retrofitInterface: RetrofitInterface): DataSource = DataSourceImpl(retrofitInterface)
-} DataSource, DataSourceImpl -> app/src/main/java/com/example/memo/model/dto
+} // DataSource, DataSourceImpl -> app/src/main/java/com/example/memo/model/dto
 ```
 
 <div align="center">
