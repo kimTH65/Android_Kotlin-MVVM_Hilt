@@ -10,7 +10,18 @@
  
  - <a href ="https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do">영화 진흥 위원회 API</a>를 사용
  
-#
+# Hilt란
+
+ - Dagger를 기반으로 만든 Dependency Injection 라이브러리<br>
+ 
+ - 모든 Android 클래스에 컨테이너를 제공하고 수명 주기를 자동으로 관리함<br>
+ 
+ - @HiltAndroidApp : 해당 애플리케이션에 Hilt 코드를 자동으로 생성할 수 있게함
+
+ - @AndroidEntryPoint : Hilt로 의존성 주입을 사용할 컨테이너(컴포넌트)를 만듬 
+
+ - @Inject : public 접근자를 사용하면 
+
 <br>
 <hr>
 
