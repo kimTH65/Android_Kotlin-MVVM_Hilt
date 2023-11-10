@@ -41,7 +41,7 @@
 <div align="center">
  <h5>
   <a href="app/src/main/AndroidManifest.xml">
-   app/src/main/AndroidManifest.xml
+   Manifest
   </a>
  </h5>
 </div>
@@ -83,7 +83,7 @@
 <div align="center">
  <h5>
   <a href="app/src/main/java/com/example/memo/di/App.kt">
-   app/src/main/java/com/example/memo/di/App.kt
+   Application
   </a>
  </div>
 
@@ -104,11 +104,8 @@ open class App : Application()
 
 <div align="center">
  <h5>
-  <h5>
-   NetworkModule
-  </h5>
   <a href="app/src/main/java/com/example/memo/di/NetworkModule.kt">
-   app/src/main/java/com/example/memo/di/NetworkModule.kt
+   NetworkModule
   </a>
  </div>
 
@@ -165,11 +162,8 @@ object NetworkModule {
 
 <div align="center">
  <h5>
-  <h5>
-   DataSourceModule
-  </h5>
   <a href="app/src/main/java/com/example/memo/di/DataSourceModule.kt">
-   app/src/main/java/com/example/memo/di/DataSourceModule.kt
+   DataSourceModule
   </a>
  </div>
 
@@ -216,11 +210,8 @@ class RepositoryModule {
 
 <div align="center">
  <h5>
-  <h5>
-   UseCaseModule
-  </h5>
   <a href="app/src/main/java/com/example/memo/di/UseCaseModule.kt">
-   app/src/main/java/com/example/memo/di/UseCaseModule.kt
+   UseCaseModule
   </a>
  </div>
 
@@ -245,7 +236,7 @@ class UseCaseModule {
 <div align="center">
  <h5>
   <a href="app/src/main/java/com/example/memo/viewmodel/MainViewModel.kt">
-   app/src/main/java/com/example/memo/viewmodel/MainViewModel.kt
+   ViewModel
   </a>
  </div>
 
@@ -278,7 +269,7 @@ class MainViewModel @Inject constructor(
 <div align="center">
  <h5>
   <a href="app/src/main/java/com/example/memo/ui">
-   app/src/main/java/com/example/memo/ui
+   View
   </a>
  </div>
 
