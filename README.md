@@ -184,11 +184,8 @@ class DataSourceModule {
 
 <div align="center">
  <h5>
-  <h5>
-   RepositoryModule
-  </h5>
   <a href="app/src/main/java/com/example/memo/di/RepositoryModule.kt">
-   app/src/main/java/com/example/memo/di/RepositoryModule.kt
+   RepositoryModule
   </a>
  </div>
 
