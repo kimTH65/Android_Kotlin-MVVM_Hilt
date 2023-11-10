@@ -39,11 +39,11 @@
 <h5>Manifest : Android 앱에 대한 중요한 메타 데이터가 포함된 XML</h5>
 
 <div align="center">
- <h6>
+ <h5>
   <a href="app/src/main/AndroidManifest.xml">
    app/src/main/AndroidManifest.xml
   </a>
- </h6>
+ </h5>
 </div>
 
 ```
@@ -81,7 +81,7 @@
 <h5>ApplicationClass : 어플리케이션내의 모든 컴포넌트에서 접근 가능</h5>
 
 <div align="center">
- <h6>
+ <h5>
   <a href="app/src/main/java/com/example/memo/di/App.kt">
    app/src/main/java/com/example/memo/di/App.kt
   </a>
@@ -103,7 +103,7 @@ open class App : Application()
 <h5>NetworkModule → DataSourceModule → RepositoryModule → UseCaseModule </h5>
 
 <div align="center">
- <h6>
+ <h5>
   <h5>
    NetworkModule
   </h5>
@@ -164,7 +164,7 @@ object NetworkModule {
 ```
 
 <div align="center">
- <h6>
+ <h5>
   <h5>
    DataSourceModule
   </h5>
@@ -189,7 +189,7 @@ class DataSourceModule {
 ```
 
 <div align="center">
- <h6>
+ <h5>
   <h5>
    RepositoryModule
   </h5>
@@ -215,7 +215,7 @@ class RepositoryModule {
 ```
 
 <div align="center">
- <h6>
+ <h5>
   <h5>
    UseCaseModule
   </h5>
@@ -243,7 +243,7 @@ class UseCaseModule {
 <h3>4. ViewModel</h3>
 
 <div align="center">
- <h6>
+ <h5>
   <a href="app/src/main/java/com/example/memo/viewmodel/MainViewModel.kt">
    app/src/main/java/com/example/memo/viewmodel/MainViewModel.kt
   </a>
@@ -276,7 +276,7 @@ class MainViewModel @Inject constructor(
 <h3>5. View</h3>
 
 <div align="center">
- <h6>
+ <h5>
   <a href="app/src/main/java/com/example/memo/ui">
    app/src/main/java/com/example/memo/ui
   </a>
