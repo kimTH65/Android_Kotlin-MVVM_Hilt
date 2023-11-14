@@ -45,7 +45,7 @@
 
 <h3>1. Manifest</h3>
 
-<h5>Manifest : Android 앱에 대한 중요한 메타 데이터가 포함된 XML</h5>
+<h5>Manifest : Androidアプリの重要なメタデータを含むXML</h5>
 
 <div align="center">
  <h5>
@@ -87,7 +87,7 @@
 
 <h3>2. Application</h3>
 
-<h5>ApplicationClass : 어플리케이션내의 모든 컴포넌트에서 접근 가능</h5>
+<h5>ApplicationClass : アプリケーション内のすべてのコンポーネントでアクセス可能、Moduleグローバル関数を使用してKoinモジュールを宣言</h5>
 
 <div align="center">
  <h5>
