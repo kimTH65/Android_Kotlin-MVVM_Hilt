@@ -1,5 +1,14 @@
 # Android(Kotlin)-MVVM_Hilt
-
+ 
+<div align="right">
+  <h5>
+    Language : 
+    <a href="JP.md">日本語</a> 
+      ,
+    <a href="US.md">English</a> 
+  </h5>
+</div>
+ 
  - MVVM Pattern,Observer Pattern사용<br>
  
  - LiveData, ViewModel, Observer메소드를 이용하여 실시간으로 UI변경<br>
