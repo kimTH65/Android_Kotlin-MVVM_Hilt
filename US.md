@@ -20,32 +20,32 @@
  - Using <a href ="https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do">Korean Film Council API</a>
 <br>
 
-# Hilt란
+# Hilt
 
- - Dagger를 기반으로 만든 Dependency Injection 라이브러리<br>
+ - Dagger-based Dependency Injection Library<br>
  
- - 모든 Android 클래스에 컨테이너를 제공하고 수명 주기를 자동으로 관리함<br>
+ - Provides containers to all Android classes and automatically manages life cycles<br>
  
- - @HiltAndroidApp : 해당 애플리케이션에 Hilt 코드를 자동으로 생성할 수 있게함
+ - @HiltAndroidApp : Enables the application to generate Hilt code automatically
 
- - @AndroidEntryPoint : Hilt로 의존성 주입을 사용할 컨테이너(컴포넌트)를 만듬 
+ - @AndroidEntryPoint : Create a container (component) to use dependency injection with Hilt
 
- - @Inject : public 접근자의 경우 Inject 어노테이션으로 의존성 주입 가능
+ - @Inject : In case of public accessors, dependency injection is possible with the Inject Annotation
 
- - @Module : private 접근자의 경우 Module,IntallIn로 의존성 주입
+ - @Module : For private accessors, module,Inject dependency into IntallIn
 
- - @IntallIn : 어느 안드로이드 클래스(activity, fragemnt etc)를 사용할건지 설정
+ - @IntallIn : Set which Android class (activity, fragemntetc) to use
 
- - @Binds : abstract class(추상 클래스)에서 사용, 리턴값(구현체)를 하나만 가질 수 있음, static이 아님
+ - @Binds : Used in Abstract class, can only have one return value (implementation), not static
 
- - @Provides : object에서 사용, 여러 파라미터를 가질 수 있음, 사용 시 매번 의존성 호출
+ - @Provides : Used by object, can have multiple parameters, call dependency each time used
 
 <br>
 <hr>
 
 <h3>1. Manifest</h3>
 
-<h5>Manifest : Android 앱에 대한 중요한 메타 데이터가 포함된 XML</h5>
+<h5>Manifest : XML with sensitive metadata for Android apps</h5>
 
 <div align="center">
  <h5>
@@ -87,7 +87,7 @@
 
 <h3>2. Application</h3>
 
-<h5>ApplicationClass : 어플리케이션내의 모든 컴포넌트에서 접근 가능</h5>
+<h5>ApplicationClass : Accessible from all components within the application, declaring the Koin module using the module global function</h5>
 
 <div align="center">
  <h5>
