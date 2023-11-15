@@ -9,15 +9,15 @@
   </h5>
 </div>
  
- - MVVM Pattern,Observer Pattern사용<br>
+ - Using MVVM Pattern,Observer Pattern<br>
  
- - LiveData, ViewModel, Observer메소드를 이용하여 실시간으로 UI변경<br>
+ - Update UI in real time using Room(Local Database), LiveData, ViewModel, Observer Method<br>
  
- - Recyclerview, dataBinding 등등 사용<br>
+ - Using Recyclerview, dataBinding ...<br>
  
- - DI(Dependency injection)으로 Hilt사용
+ - Using Koin for DI(Dependency injection)
  
- - <a href ="https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do">영화 진흥 위원회 API</a>를 사용
+ - Using <a href ="https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do">Korean Film Council API</a>
 <br>
 
 # Hilt란
